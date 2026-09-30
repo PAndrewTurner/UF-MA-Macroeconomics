@@ -1,4 +1,4 @@
-# Practice exam
+# Practice questions
 
 These are the end-of-chapter exercises and review questions that were not on your problem sets, plus the Ch 17 numeric IS problem. Cover the answer, attempt the question, then check. Symbols follow the Formula sheet tab.
 

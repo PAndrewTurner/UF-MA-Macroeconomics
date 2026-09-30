@@ -5,3 +5,6 @@ __pycache__/
 
 # Course PDFs/problem sets (source material, kept local, not committed)
 Class Material/
+
+# Local Claude Code settings
+.claude/settings.local.json

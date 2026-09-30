@@ -20,7 +20,7 @@ DOCS = {
     "guide": "study-guide.md",
     "formulas": "formula-sheet.md",
     "problems": "problem-sets.md",
-    "practice": "practice-exam.md",
+    "practice": "practice-questions.md",
 }
 OUT = ROOT / "assets" / "content.js"
 

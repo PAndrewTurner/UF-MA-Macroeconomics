@@ -1,6 +1,6 @@
 # ECO5207 Macro Exam Study Guide
 
-This guide walks every lecture deck (L01–L05), textbook chapter (Garín, Lester & Sims Ch 1–3, 5, 9–13, 17–18) and problem set (PS 1–5 plus the Lecture 3 review exercises) in the order the models build. Every formula lists what each symbol means. The other tabs hold a one-page formula sheet, fully worked problem sets, and a practice exam with answers.
+This guide walks every lecture deck (L01–L05), textbook chapter (Garín, Lester & Sims Ch 1–3, 5, 9–13, 17–18) and problem set (PS 2–5 plus the Lecture 3 review exercises) in the order the models build. Every formula lists what each symbol means. The other tabs hold a one-page formula sheet, fully worked problem sets, and practice questions with answers.
 
 ## Course map
 
@@ -8,7 +8,7 @@ The course builds one model in layers: a household that smooths consumption (Ch 
 
 | Lecture deck | Topic | Textbook | Problem set |
 | --- | --- | --- | --- |
-| L01 | Brief history of economic thought | Ch 1–3 | Lecture 1 PS (essay on model usefulness) |
+| L01 | Brief history of economic thought | Ch 1–3 | — |
 | L02 | Consumption and saving (4 parts, incl. Euler derivation and Lagrangian) | Ch 9, Ch 10 | PS 2 (Ch 9 Q1–5, Ex 1, 2, 4) |
 | L03\_01 | Endowment economy equilibrium and fiscal policy | Ch 11, Ch 13 | PS 3 (Ch 11 Ex 1, 3; Ch 13 Ex 1) |
 | L03\_02 | Homework review exercises | Ch 11 Ex 1, 3; Ch 13 Ex 1 | Answer key for PS 3 |
@@ -95,7 +95,7 @@ where N = total hours worked; h = average hours per worker (intensive margin); E
 - A model is a simplified representation made of mathematical relationships; it is a laboratory for experiments that would be unethical or impossible in reality (randomizing who gets job training or who loses income).
 - Borges' 1:1 map is useless; abstraction is the point. What to include depends on the question (children matter for China's one-child policy, not for most monetary questions).
 - Test of a good model: it matches facts it was not built to match. A model built for worker–firm matching earns trust if it also gets wages right.
-- George Box: "All models are wrong, but some are useful" — the anchor quote of your Lecture 1 problem set.
+- George Box: "All models are wrong, but some are useful".
 - Review-question logic: a model of r and spending that misses a mild temperature correlation is fine; one that predicts consumption and income move oppositely fails on a relevant margin. Low rates in recessions do not mean low rates cause low GDP (reverse causality from central bank reaction).
 
 ## Unit 2 — History of macroeconomic thought (Ch 3, Lecture 1)
@@ -131,10 +131,6 @@ Macro moved from assumed aggregate relationships (Keynesian) to models built fro
 - Other ingredients: imperfect information, financial frictions, regional markets, behavioral features (habits, loss aversion, rational inattention), networks.
 - DSGE = Dynamic (decisions over time), Stochastic (random shocks drive cycles), General Equilibrium (markets clear; one person's saving is another's borrowing).
 - Bottom line in both sources: "all economics is microeconomics"; macro is micro at an aggregate level with the same tools (preferences, constraints, equilibrium).
-
-### Your Lecture 1 problem set thesis
-
-Each crisis supplies the variable the previous model lacked (financial frictions and the zero lower bound after 2008; Keynesian supply shocks and epidemic externalities after COVID), and the revised model then carries that crisis's architecture into the next one: the right lessons for 2008 were the wrong priors for 2021. Be ready to reuse this as an essay answer on model usefulness or the Lucas critique.
 
 ## Unit 3 — The Solow growth model (Ch 5, Lecture 4 part 1)
 

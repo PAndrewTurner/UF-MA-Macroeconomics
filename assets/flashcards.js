@@ -41,23 +41,24 @@
     main.innerHTML = `
       <div class="doc">
         <h1>Flashcards</h1>
-        <p class="page-intro">${cards.length} cards: concepts, formulas, history, and every shock in the neoclassical model. Click the card (or press Space) to flip; grade yourself with the buttons or keys 1 and 2.</p>
+        <p class="page-intro">${cards.length} cards: concepts, formulas, history, and every shock in the neoclassical model. Answer in your head, flip, then grade yourself honestly.</p>
         <div class="fc-controls">
-          <span>Deck:</span>
-          ${decks.map(d => `<button class="chip" data-deck="${d}">${d}</button>`).join('')}
-          <label style="margin-left:8px"><input type="checkbox" id="fcLearning"> Only cards I'm still learning</label>
+          <div class="segmented" role="group" aria-label="Deck">
+            ${decks.map(d => `<button class="chip" data-deck="${d}">${d}</button>`).join('')}
+          </div>
+          <label class="check"><input type="checkbox" id="fcLearning"> Only cards I'm still learning</label>
         </div>
-        <div class="progress"><div id="fcBar"></div></div>
         <div class="fc-stats" id="fcStats"></div>
+        <div class="progress" aria-hidden="true"><div id="fcBar"></div></div>
         <div id="fcCard"></div>
         <div class="fc-actions">
-          <button class="btn bad" id="fcAgain">Again (1)</button>
-          <button class="btn" id="fcFlip">Flip (Space)</button>
-          <button class="btn good" id="fcGot">Got it (2)</button>
+          <button class="btn bad" id="fcAgain">Again <kbd>1</kbd></button>
+          <button class="btn" id="fcFlip">Flip <kbd>Space</kbd></button>
+          <button class="btn good" id="fcGot">Got it <kbd>2</kbd></button>
         </div>
-        <div class="fc-actions">
-          <button class="btn" id="fcShuffle">Restart deck</button>
-          <button class="btn" id="fcReset">Reset progress</button>
+        <div class="fc-actions fc-secondary">
+          <button class="btn ghost" id="fcShuffle">Restart deck</button>
+          <button class="btn ghost" id="fcReset">Reset progress</button>
         </div>
       </div>`;
 
@@ -76,26 +77,31 @@
       const inDeck = cards.filter(c => deck === 'All' || c.deck === deck);
       const known = inDeck.filter(c => status[c.id] === 'known').length;
       const learning = inDeck.filter(c => status[c.id] === 'learning').length;
-      $('#fcStats').innerHTML = `<span>Known: <b>${known}</b></span><span>Learning: <b>${learning}</b></span><span>Unseen: <b>${inDeck.length - known - learning}</b></span><span>Left this round: <b>${queue.length}</b></span>`;
+      $('#fcStats').innerHTML = `<span class="st-known"><b>${known}</b> known</span><span class="st-learning"><b>${learning}</b> learning</span><span><b>${inDeck.length - known - learning}</b> unseen</span><span class="st-left"><b>${queue.length}</b> left this round</span>`;
       $('#fcBar').style.width = (inDeck.length ? (100 * known / inDeck.length) : 0) + '%';
       const box = $('#fcCard');
       box.innerHTML = '';
       const card = queue[0];
       ['#fcAgain', '#fcGot', '#fcFlip'].forEach(s => { $(s).disabled = !card; });
       if (!card) {
-        box.innerHTML = '<div class="card"><div class="front">Round complete.</div><div>Press "Restart deck" to go again, or tick "Only cards I\'m still learning".</div></div>';
+        box.innerHTML = '<div class="card done"><div class="card-head"><span class="deck-tag">Round complete</span></div><div class="card-body"><div class="front">You went through every card in this round.</div><p>Restart the deck to go again, or tick “Only cards I\'m still learning” to drill the misses.</p></div></div>';
         return;
       }
       const el = document.createElement('div');
-      el.className = 'card';
-      el.innerHTML = `<div class="deck-tag">${card.deck}</div><div class="face-label">Prompt</div><div class="front"></div>`;
+      el.className = 'card' + (flipped ? ' flipped' : '');
+      el.setAttribute('role', 'button');
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('aria-label', flipped ? 'Hide answer' : 'Show answer');
+      const st = status[card.id];
+      el.innerHTML = `<div class="card-head"><span class="deck-tag">${card.deck}</span>${st ? `<span class="card-status ${st}">${st === 'known' ? 'Known' : 'Learning'}</span>` : ''}</div><div class="card-body"><div class="front"></div></div>${flipped ? '' : '<div class="card-hint">Click or press Space to flip</div>'}`;
       el.querySelector('.front').textContent = card.front;
       window.Render.prettifyScripts(el.querySelector('.front'));
       if (flipped) {
         const back = window.Render.markdown(card.back);
         back.className = 'back';
-        el.appendChild(back);
+        el.querySelector('.card-body').appendChild(back);
       }
+      el.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); flip(); } });
       el.addEventListener('click', flip);
       box.appendChild(el);
     }

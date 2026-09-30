@@ -3,38 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ECO5207 Macro Study App</title>
+  <title>UF MA Macroeconomics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Spline+Sans+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <header class="topbar">
-    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">&#9776;</button>
-    <a class="brand" href="#/guide">ECO5207 Macro</a>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <a class="brand" href="#/home" aria-label="ECO5207 Macro, home">
+      <span class="brand-code">ECO 5207</span>
+      <span class="brand-name">Macro</span>
+    </a>
     <div class="search-wrap">
-      <input id="search" type="search" placeholder="Search guide, formulas, problem sets…" autocomplete="off" aria-label="Search">
+      <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="search" type="search" placeholder="Search the guide, formulas, problem sets…" autocomplete="off" aria-label="Search">
+      <kbd class="search-kbd" aria-hidden="true">/</kbd>
       <div id="searchResults" class="search-results" hidden></div>
     </div>
-    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">&#9680;</button>
+    <button class="icon-btn theme-btn" id="themeBtn" aria-label="Switch light or dark theme">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+    </button>
+    <div class="read-progress" aria-hidden="true"><div id="readBar"></div></div>
   </header>
 
   <div class="layout">
     <nav class="sidebar" id="sidebar" aria-label="Sections">
+      <a class="nav-home" href="#/home" data-view="home"><span class="nav-t">Overview</span></a>
       <div class="nav-group">
-        <div class="nav-title">Study</div>
-        <a href="#/guide" data-view="guide">Study guide</a>
+        <div class="nav-title">Read</div>
+        <a href="#/guide" data-view="guide"><span class="nav-t">Study guide</span></a>
         <div class="toc" id="toc-guide"></div>
-        <a href="#/formulas" data-view="formulas">Formula sheet</a>
-        <a href="#/problems" data-view="problems">Problem sets worked</a>
+        <a href="#/formulas" data-view="formulas"><span class="nav-t">Formula sheet</span></a>
+        <a href="#/problems" data-view="problems"><span class="nav-t">Problem sets, worked</span></a>
         <div class="toc" id="toc-problems"></div>
-        <a href="#/practice" data-view="practice">Practice exam</a>
+        <a href="#/practice" data-view="practice"><span class="nav-t">Practice questions</span> <span class="nav-count" id="countPractice"></span></a>
       </div>
       <div class="nav-group">
-        <div class="nav-title">Practice</div>
-        <a href="#/flashcards" data-view="flashcards">Flashcards</a>
-        <a href="#/simulator" data-view="simulator">Shock simulator</a>
+        <div class="nav-title">Drill</div>
+        <a href="#/flashcards" data-view="flashcards"><span class="nav-t">Flashcards</span> <span class="nav-count" id="countCards"></span></a>
+        <a href="#/simulator" data-view="simulator"><span class="nav-t">Shock simulator</span> <span class="nav-count" id="countShocks"></span></a>
       </div>
     </nav>
+    <div class="scrim" id="scrim" hidden></div>
 
     <main id="main" class="main" tabindex="-1"></main>
   </div>
@@ -49,6 +64,7 @@
   <script src="assets/search.js"></script>
   <script src="assets/flashcards.js"></script>
   <script src="assets/simulator.js"></script>
+  <script src="assets/home.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

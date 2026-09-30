@@ -119,7 +119,7 @@
 
     function box(title, sub, svg) {
       const d = document.createElement('div');
-      d.className = 'panel';
+      d.className = 'panel graph-paper';
       d.innerHTML = `<h4>${title}</h4><p class="sub">${sub}</p>`;
       d.appendChild(svg);
       panelsEl.appendChild(d);
@@ -182,7 +182,7 @@
     // table
     const vars = window.SHOCK_VARS;
     const val = { Y: 'Y', C: 'C', I: 'I', N: 'N', w: 'w', r: 'r', i: 'i', P: 'P' };
-    let html = '<table><thead><tr><th></th>' + vars.map(v => `<th>${v}<sub>t</sub></th>`).join('') + '</tr></thead><tbody>';
+    let html = '<table><thead><tr><th scope="col"></th>' + vars.map(v => `<th>${v}<sub>t</sub></th>`).join('') + '</tr></thead><tbody>';
     html += '<tr><th>Theory</th>' + vars.map(v => `<td class="${signClass(shock.signs[v])}">${shock.signs[v]}</td>`).join('') + '</tr>';
     html += '<tr><th>Before</th>' + vars.map(v => `<td>${fmt(e0[val[v]])}</td>`).join('') + '</tr>';
     html += '<tr><th>After</th>' + vars.map(v => `<td>${fmt(e1[val[v]])}</td>`).join('') + '</tr>';
@@ -190,7 +190,7 @@
     root.querySelector('.sim-table').innerHTML = html;
 
     root.querySelector('.steps').innerHTML =
-      `<strong>${shock.label}: ${shock.name}</strong> — ${shock.type}; ${shock.curve}.<ol>` +
+      `<div class="steps-head"><span class="steps-type">${shock.type}</span><strong>${shock.label}: ${shock.name}</strong><span class="steps-curve">${shock.curve}</span></div><ol>` +
       shock.steps.map(s => `<li>${s}</li>`).join('') + '</ol>';
     window.Render.prettifyScripts(root.querySelector('.steps'));
     window.Render.prettifyScripts(root.querySelector('.shock-row'));
@@ -203,11 +203,11 @@
     main.innerHTML = `
       <div class="doc">
         <h1>Shock simulator</h1>
-        <p class="page-intro">Pick a shock and drag its size. Grey is the economy before the shock, blue after. The sign row is the answer to memorize; the numbers come from an illustrative model.</p>
+        <p class="page-intro">Pick a shock and drag its size. Grey is the economy before the shock, blue after. The theory row is the answer to memorize; the numbers come from an illustrative model.</p>
         <div class="sim-top">
-          <div class="shock-row">${window.SHOCKS.map(s => `<button class="chip" data-shock="${s.id}" title="${s.name}">${s.label}</button>`).join('')}</div>
+          <div class="shock-row" role="group" aria-label="Shock">${window.SHOCKS.map(s => `<button class="chip" data-shock="${s.id}" title="${s.name}">${s.label}</button>`).join('')}</div>
           <div class="sim-options">
-            <label>Shock size <input type="range" id="simSize" min="0" max="1" step="0.05" value="${state.size}"></label>
+            <label class="size">Shock size <input type="range" id="simSize" min="0" max="1" step="0.05" value="${state.size}"></label>
             <label>Labor supply
               <select id="simNs"><option value="elastic">elastic (flat)</option><option value="normal">normal</option><option value="inelastic">inelastic (steep)</option></select></label>
             <label>Labor demand

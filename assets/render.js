@@ -130,8 +130,31 @@
       if (used[id]) id += '-' + (++used[id]); else used[id] = 1;
       h.id = id;
     });
+    // "Unit 3 — The Solow growth model (Ch 5, Lecture 4)" -> eyebrow, title, sources.
+    el.querySelectorAll('h2').forEach(h => {
+      const parts = Render.splitUnit(h.textContent);
+      if (!parts) return;
+      h.textContent = '';
+      h.classList.add('unit-head');
+      [['h-eyebrow', parts.unit], ['h-title', parts.title], ['h-src', parts.src]].forEach(([cls, txt]) => {
+        if (!txt) return;
+        const s = document.createElement('span');
+        s.className = cls;
+        s.textContent = txt;
+        h.appendChild(s);
+      });
+    });
+    // The "where …" line that defines each symbol of the formula above it.
+    el.querySelectorAll('.math-block + p').forEach(p => {
+      if (/^where\s/i.test(p.textContent.trim())) p.classList.add('where');
+    });
     Render.prettifyScripts(el);
     return el;
+  };
+
+  Render.splitUnit = function (text) {
+    const m = String(text).match(/^(Unit \d+)\s+[—–-]\s+(.+?)(?:\s+\(([^()]+)\))?$/);
+    return m ? { unit: m[1], title: m[2], src: m[3] || '' } : null;
   };
 
   // Headings (level 2) for the sidebar table of contents, straight from markdown.

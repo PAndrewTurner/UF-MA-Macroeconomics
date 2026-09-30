@@ -2,19 +2,6 @@
 
 Steps only, in the order you would write them on the exam.
 
-## Lecture 1 problem set (essay)
-
-Thesis: each crisis supplies the variable the previous model lacked, and the revised model carries that crisis's architecture into the next one.
-
-| Episode | What standard DSGE lacked | Repair | Source you cited |
-| --- | --- | --- | --- |
-| Pre-2008 | Financial intermediaries (balance sheets netted out) | Financial accelerator | Blanchard (2008); Bernanke, Gertler & Gilchrist (1999) |
-| 2008–2015 | Zero lower bound; fiscal multipliers | ZLB models; multipliers underestimated in austerity | Krugman (1998); Eggertsson & Woodford (2003); Blanchard & Leigh (2013); Christiano et al. (2018) |
-| COVID-19 | Supply and demand shocks at once; epidemic externality | Keynesian supply shock; SIR in general equilibrium | Guerrieri et al. (2022); Eichenbaum et al. (2021) |
-| 2021–2023 inflation | Post-2008 consensus (weak demand, ZLB) misread overheating | Product-market shocks start it, tight labor markets sustain it | Bernanke & Blanchard (2025) |
-
-Exam use: pair with the Lucas critique (Unit 2) and Box's "all models are wrong" (Ch 2).
-
 ## Problem Set 2 (Ch 9)
 
 Symbols: C, Y = consumption, income; S\_t = savings into t+1; r = real rate; β = discount factor; τ = consumption tax rate; u' = marginal utility.

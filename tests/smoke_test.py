@@ -69,6 +69,18 @@ def main() -> int:
             if bad:
                 failures.append(f"{view}: {bad} KaTeX errors")
 
+        page.goto(f"{base}#/home", wait_until="networkidle")
+        page.locator(".drill-choice").first.click()
+        if page.locator(".drill-result:not([hidden])").count() != 1:
+            failures.append("home: drill did not reveal an answer")
+
+        page.goto(f"{base}#/practice", wait_until="networkidle")
+        page.locator(".reveal-btn").first.click()
+        if page.locator(".question.open .answer").count() != 1:
+            failures.append("practice: answer did not reveal")
+        if page.get_by_text("Lecture 1 problem set").count():
+            failures.append("problem set 1 should be removed")
+
         page.goto(f"{base}#/guide", wait_until="networkidle")
         page.fill("#search", "euler equation")
         page.wait_for_timeout(200)
@@ -94,7 +106,7 @@ def main() -> int:
         for f in failures:
             print(" -", f)
         return 1
-    print("OK: all views render, search works, flashcards flip, simulator matches theory signs")
+    print("OK: all views render, drill and practice reveal, search works, flashcards flip, simulator matches theory signs")
     return 0
 
 
