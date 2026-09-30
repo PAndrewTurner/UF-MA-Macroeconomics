@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 .venv/
+
+# Course PDFs/problem sets (source material, kept local, not committed)
+Class Material/

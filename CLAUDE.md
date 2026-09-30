@@ -25,6 +25,7 @@ python3 tests/smoke_test.py      # headless check of every view (needs playwrigh
 | `assets/search.js` | Section-level full-text search across the four documents. |
 | `assets/flashcards.js` + `data/flashcards.js` | Flashcard UI and hand-written deck. Shock cards are generated from `data/shocks.js`. Progress lives in localStorage. |
 | `assets/simulator.js` + `data/shocks.js` | Neoclassical-model shock simulator (labor market, production function, IS–Ys, money market). |
+| `Class Material/` | The original course files (textbook chapters, lecture decks, problem sets). Source material for the content; git-ignored. |
 | `assets/app.js` | Hash router (`#/guide?s=<heading-slug>`, `#/simulator?shock=Gt`), sidebar TOC, search box, theme. |
 
 No build tooling or npm: plain HTML/CSS/JS, libraries from jsDelivr (marked 12, KaTeX 0.16).
