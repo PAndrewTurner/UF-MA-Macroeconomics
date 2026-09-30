@@ -161,7 +161,17 @@
 
   function mount(main, docs) {
     const md = id => docs.find(d => d.id === id).md;
-    const units = window.Render.outline(md('guide'), 2).map(o => Object.assign(o, window.Render.splitUnit(o.title))).filter(o => o.unit);
+    // modules (## Module N) with the topic headings (###) inside each
+    const modules = [];
+    window.Render.outline(md('guide'), [2, 3]).forEach(o => {
+      const mod = o.level === 2 && window.Render.splitModule(o.title);
+      if (mod) modules.push(Object.assign({ id: o.id, topics: [] }, mod));
+      else if (o.level === 2) modules.push(null);
+      else if (modules.length && modules[modules.length - 1] && /\s\(Ch [^()]+\)$/.test(o.title)) {
+        modules[modules.length - 1].topics.push(o.title.replace(/\s+\(Ch [^()]+\)$/, ''));
+      }
+    });
+    const units = modules.filter(Boolean);
     // rows of the "| Formula | Notes |" tables (header and --- rows excluded)
     const nFormulas = md('formulas').split(/\n(?=\| Formula)/).slice(1)
       .reduce((n, block) => n + Math.max(0, (block.match(/^(\|.*)$/m) ? block.split('\n\n')[0].split('\n').length : 2) - 2), 0);
@@ -207,7 +217,7 @@
         <section class="home-section">
           <h2 class="section-label">Read</h2>
           <div class="tiles">
-            <a class="tile" href="#/guide"><span class="tile-title">Study guide</span><span class="tile-meta">${units.length} units, lecture by lecture</span></a>
+            <a class="tile" href="#/guide"><span class="tile-title">Study guide</span><span class="tile-meta">${units.length} modules, one per lecture</span></a>
             <a class="tile" href="#/formulas"><span class="tile-title">Formula sheet</span><span class="tile-meta">${nFormulas} formulas, every symbol defined</span></a>
             <a class="tile" href="#/problems"><span class="tile-title">Problem sets, worked</span><span class="tile-meta">${nSets} sets, steps in exam order</span></a>
             <a class="tile" href="#/practice"><span class="tile-title">Practice questions</span><span class="tile-meta">${nQuestions} questions, answers hidden</span></a>
@@ -231,16 +241,17 @@
 
         <section class="home-section">
           <h2 class="section-label">Course path</h2>
-          <p class="section-note">The course builds one model in layers. Each unit reuses the one before it.</p>
+          <p class="section-note">One module per lecture deck, with the textbook topics it covers.</p>
           <ol class="path">
-            ${units.map(u => `<li><a href="#/guide?s=${u.id}"><span class="path-n">${u.unit.replace('Unit ', '')}</span><span class="path-title"></span><span class="path-src"></span></a></li>`).join('')}
+            ${units.map(u => `<li><a href="#/guide?s=${u.id}"><span class="path-n">${u.n}</span><span class="path-title"></span><span class="path-src">${u.src}</span><span class="path-topics"></span></a></li>`).join('')}
           </ol>
         </section>
       </div>`;
 
     main.querySelectorAll('.path li').forEach((li, k) => {
       li.querySelector('.path-title').textContent = units[k].title;
-      li.querySelector('.path-src').textContent = units[k].src;
+      li.querySelector('.path-topics').textContent = units[k].topics.join(' · ');
+      window.Render.prettifyScripts(li.querySelector('.path-topics'));
     });
     mountDrill(main);
   }

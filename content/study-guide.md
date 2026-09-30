@@ -1,19 +1,19 @@
 # ECO5207 Macro Exam Study Guide
 
-This guide walks every lecture deck (L01–L05), textbook chapter (Garín, Lester & Sims Ch 1–3, 5, 9–13, 17–18) and problem set (PS 2–5 plus the Lecture 3 review exercises) in the order the models build. Every formula lists what each symbol means. The other tabs hold a one-page formula sheet, fully worked problem sets, and practice questions with answers.
+This guide walks every lecture deck (L01–L05), textbook chapter (Garín, Lester & Sims Ch 1–3, 5, 9–13, 17–18) and problem set (PS 2–5 plus the Lecture 3 review exercises) grouped by course module: one module per lecture deck, L01 through L05. Every formula lists what each symbol means. The other tabs hold a one-page formula sheet, fully worked problem sets, and practice questions with answers.
 
 ## Course map
 
 The course builds one model in layers: a household that smooths consumption (Ch 9–10), then an equilibrium where r adjusts (Ch 11), then government (Ch 13), then firms, labor and capital (Ch 12), and finally the full neoclassical model with money (Ch 17–18). Solow (Ch 5) is the long-run benchmark that supplies the production function and capital accumulation equation reused later.
 
-| Lecture deck | Topic | Textbook | Problem set |
-| --- | --- | --- | --- |
-| L01 | Brief history of economic thought | Ch 1–3 | — |
-| L02 | Consumption and saving (4 parts, incl. Euler derivation and Lagrangian) | Ch 9, Ch 10 | PS 2 (Ch 9 Q1–5, Ex 1, 2, 4) |
-| L03\_01 | Endowment economy equilibrium and fiscal policy | Ch 11, Ch 13 | PS 3 (Ch 11 Ex 1, 3; Ch 13 Ex 1) |
-| L03\_02 | Homework review exercises | Ch 11 Ex 1, 3; Ch 13 Ex 1 | Answer key for PS 3 |
-| L04 | Solow model; firm production, labor demand, investment, labor supply | Ch 5, Ch 12 | PS 4 (Ch 12 Ex 1, 2) |
-| L05 | Graphing the neoclassical model; effects of shocks | Ch 17, Ch 18 | PS 5 (Ch 17 Ex 1, 2; Ch 18 Ex 1, 2) |
+| Module | Lecture deck | Topic | Textbook | Problem set |
+| --- | --- | --- | --- | --- |
+| 1 | L01 | Brief history of economic thought | Ch 1–3 | — |
+| 2 | L02 | Consumption and saving (4 parts, incl. Euler derivation and Lagrangian) | Ch 9, Ch 10 | PS 2 (Ch 9 Q1–5, Ex 1, 2, 4) |
+| 3 | L03\_01 | Endowment economy equilibrium and fiscal policy | Ch 11, Ch 13 | PS 3 (Ch 11 Ex 1, 3; Ch 13 Ex 1) |
+| 3 | L03\_02 | Homework review exercises | Ch 11 Ex 1, 3; Ch 13 Ex 1 | Answer key for PS 3 |
+| 4 | L04 | Solow model; firm production, labor demand, investment, labor supply | Ch 5, Ch 12 | PS 4 (Ch 12 Ex 1, 2) |
+| 5 | L05 | Graphing the neoclassical model; effects of shocks | Ch 17, Ch 18 | PS 5 (Ch 17 Ex 1, 2; Ch 18 Ex 1, 2) |
 
 How each layer changes the key equilibrium condition:
 
@@ -25,11 +25,15 @@ How each layer changes the key equilibrium condition:
 
 Three habits that earn most exam points: (a) always name whether a variable is exogenous or endogenous; (b) for any shock, ask "which curve moves: IS, Ys, or neither?" before anything else; (c) when the interest rate moves, explain it as undoing the smoothing the household wanted to do.
 
-## Unit 1 — Macro data and models (Ch 1–2)
+## Module 1 — History of economic thought, data and models (L01)
+
+**Lecture:** L01 · **Textbook:** Ch 1–3
+
+### Macro data and models (Ch 1–2)
 
 GDP is one number measured three equivalent ways (production, income, expenditure); real GDP strips out price changes; and a model is a deliberately simplified map judged by whether it explains things it was not built to explain.
 
-### 1.1 Calculating GDP
+#### 1.1 Calculating GDP
 
 GDP = the current-dollar value of all final goods and services produced within a country in a period. "Final" excludes intermediate goods (tires on a new car) to avoid double counting; replacement tires sold to a car owner are final.
 
@@ -55,7 +59,7 @@ where C\_t = household consumption; I\_t = investment (business capital, new res
 - Shares: C ≈ 60–70%, I ≈ 15% (the most volatile), G ≈ 20%, NX small and negative lately.
 - Log levels: a vertical difference of 0.5 in ln GDP ≈ 50% growth.
 
-### 1.2 Real versus nominal
+#### 1.2 Real versus nominal
 
 Nominal values are in money; real values are in goods. Real GDP ("constant-dollar GDP") values each year's quantities at base-year prices.
 
@@ -69,7 +73,7 @@ Base-year problem (book example): haircuts $5 × 100 and computers $500 × 10 in
 
 Growth of a product ≈ sum of growth rates: nominal GDP growth (1.6%/qtr) ≈ inflation (0.8%) + real growth (0.8%); split further, ≈ inflation 0.8% + population 0.3% + real per-capita 0.45%. Per-capita output has grown about 2%/yr since 1947. Recessions are NBER-dated (no formal rule; typically GDP falls \~5% below trend; 2007–09 more than 10%).
 
-### 1.3 The Consumer Price Index
+#### 1.3 The Consumer Price Index
 
 ```latex
 P^{cpi}_t = \frac{\sum_{i=1}^{N} p_{i,t}\, x_i}{\sum_{i=1}^{N} p_{i,b}\, x_i}
@@ -79,7 +83,7 @@ where N = number of goods in the basket; x\_i = fixed basket quantity of good i 
 
 CPI fixes quantities and updates prices; the deflator fixes prices and updates quantities. Because the CPI ignores substitution toward relatively cheaper goods, it overstates cost-of-living inflation (substitution bias): CPI 0.9%/qtr vs deflator 0.8%/qtr, and CPI is more volatile. The CPI also includes imports and excludes investment goods. Use the deflator for US-produced prices, CPI for household cost of living. Indexing transfers to an upward-biased index raises their real value over time.
 
-### 1.4 Measuring the labor market
+#### 1.4 Measuring the labor market
 
 ```latex
 N = h \times E, \quad n = \frac{N}{L}, \quad LF = E + U, \quad lfp = \frac{LF}{L}, \quad u = \frac{U}{LF}
@@ -90,7 +94,7 @@ where N = total hours worked; h = average hours per worker (intensive margin); E
 - Hours per capita are roughly trendless because rising participation (women entering) offset falling hours per worker (about 40 --> 36/week).
 - The unemployment rate is imperfect: discouraged workers who quit searching lower u with no change in hours; a shift from full-time to part-time leaves u unchanged. Hours per capita is the preferred labor-input measure.
 
-### 1.5 What is a model? (Ch 2)
+#### 1.5 What is a model? (Ch 2)
 
 - A model is a simplified representation made of mathematical relationships; it is a laboratory for experiments that would be unethical or impossible in reality (randomizing who gets job training or who loses income).
 - Borges' 1:1 map is useless; abstraction is the point. What to include depends on the question (children matter for China's one-child policy, not for most monetary questions).
@@ -98,7 +102,7 @@ where N = total hours worked; h = average hours per worker (intensive margin); E
 - George Box: "All models are wrong, but some are useful".
 - Review-question logic: a model of r and spending that misses a mild temperature correlation is fine; one that predicts consumption and income move oppositely fails on a relevant margin. Low rates in recessions do not mean low rates cause low GDP (reverse causality from central bank reaction).
 
-## Unit 2 — History of macroeconomic thought (Ch 3, Lecture 1)
+### History of macroeconomic thought (Ch 3, Lecture 1)
 
 Macro moved from assumed aggregate relationships (Keynesian) to models built from optimizing households and firms with rational expectations (DSGE), because the Lucas critique showed estimated relationships shift when policy changes. Lecture 1 frames macro as "aggregate economics" whose key questions are growth, rich vs poor countries, recessions, and the role of government (plus 2007–09 and 2020–22).
 
@@ -109,7 +113,7 @@ Macro moved from assumed aggregate relationships (Keynesian) to models built fro
 | Disagreement and transition | 1968–1982 | Phillips curve not exploitable; parameters not policy-invariant; rational expectations | Friedman (1968 AEA address), Phelps, Lucas (1976 critique), Sargent–Wallace (1975), Barro (1974) | 1970s stagflation (oil shock + Fed stimulus = high inflation and unemployment) |
 | Modern macro | 1982– | Microfoundations, rational expectations, general equilibrium, dynamics: DSGE with the Ramsey–Cass–Koopmans growth model at its core | Kydland–Prescott (1982 RBC), New Keynesians, Diamond–Mortensen–Pissarides | Open questions: size of the spending multiplier, which frictions matter |
 
-### Key arguments to be able to explain
+#### Key arguments to be able to explain
 
 - **Friedman (1968):** keeping unemployment below its natural rate requires ever-rising inflation, because higher inflation raises expected inflation and nominal rates; the trade-off is not permanent.
 - **Lucas critique (1976):** relationships in the data come from optimizing behavior that depends on policy. Example from the book: people consume 90% of income, so a naive model predicts $900 spent out of a $1,000 tax cut; a forward-looking household that expects the deficit to be repaid saves more. Econometrically it is a missing-variables problem (policy rules and expectations are omitted).
@@ -117,14 +121,14 @@ Macro moved from assumed aggregate relationships (Keynesian) to models built fro
 - **Implications:** predictable money has no real effects (Sargent–Wallace); deficit-financed tax cuts have little effect (Ricardian equivalence, Barro); government cannot consistently trick people; most optimal policies are time-inconsistent (promise low capital taxes, then renege once capital is built; rational investors anticipate this).
 - **Freshwater vs saltwater:** Chicago/Minnesota (market-clearing, RBC) vs coastal schools (Keynesian frictions); Krugman (2009) charged the field with mistaking mathematical beauty for truth.
 
-### Real business cycle (RBC) theory
+#### Real business cycle (RBC) theory
 
 - Neoclassical growth model + random TFP shocks + a labor–leisure choice.
 - Matches comovement of TFP, output, labor, investment and consumption, and relative volatility investment > output > consumption.
 - Theory: cycles are efficient; no unemployment or market failure; no role for monetary policy; homogeneous agents; TFP drives everything. The lecture's verdict: no longer believed as the whole story, but still the core.
 - TFP = output not explained by measured inputs, so it depends on which inputs are in the production function.
 
-### Modern additions (Lecture 1)
+#### Modern additions (Lecture 1)
 
 - Market failures: price rigidity (New Keynesian, gives monetary policy a role); search frictions (DMP, 2010 Nobel) produce unemployment; incomplete asset markets.
 - Heterogeneity: households with incomplete markets (Aiyagari–Bewley–Huggett), heterogeneous firms (Melitz).
@@ -132,103 +136,15 @@ Macro moved from assumed aggregate relationships (Keynesian) to models built fro
 - DSGE = Dynamic (decisions over time), Stochastic (random shocks drive cycles), General Equilibrium (markets clear; one person's saving is another's borrowing).
 - Bottom line in both sources: "all economics is microeconomics"; macro is micro at an aggregate level with the same tools (preferences, constraints, equilibrium).
 
-## Unit 3 — The Solow growth model (Ch 5, Lecture 4 part 1)
+## Module 2 — Consumption and saving (L02)
 
-From any positive starting point, capital per worker converges to a unique steady state k\*; a higher saving rate or productivity raises the level of k\* but gives only a temporary burst of growth, so sustained growth must come from continual productivity gains. Solow uses rules of thumb (constant saving rate, inelastic labor) rather than optimization.
+**Lecture:** L02, parts 1–4 (incl. the Euler derivation and the Lagrangian) · **Textbook:** Ch 9–10 · **Problem set:** PS 2 (Ch 9 Q1–5, Ex 1, 2, 4)
 
-### 5.1 Production, consumption, investment
-
-Capital (i) must be produced, (ii) helps produce output, (iii) is not used up in production. It is a stock that can be accumulated; labor is a flow and an endowment.
-
-```latex
-Y_t = A\,F(K_t, N_t), \qquad F(K_t,N_t) = K_t^{\alpha} N_t^{1-\alpha}
-```
-
-where Y\_t = output; A = productivity (exogenous; changes are permanent in this chapter); K\_t = capital stock; N\_t = labor; α = capital's exponent, 0 < α < 1.
-
-Production-function assumptions (asked often): F\_K > 0, F\_N > 0 (positive marginal products); F\_KK < 0, F\_NN < 0 (diminishing marginal products); F\_KN > 0 (more capital raises the marginal product of labor); constant returns to scale F(λK, λN) = λF(K, N); both inputs necessary F(0, N) = F(K, 0) = 0. Constant returns and diminishing marginal products do not contradict each other: CRS scales both inputs; diminishing returns vary one.
-
-Firm FOCs (competitive factor prices):
-
-```latex
-w_t = A F_N(K_t, N_t), \qquad R_t = A F_K(K_t, N_t)
-```
-
-where w\_t = real wage (units of fruit per hour); R\_t = real rental rate on capital; F\_N, F\_K = marginal products of labor and capital. With CRS, profit is zero and w\_t N\_t + R\_t K\_t = Y\_t (Euler's theorem for homogeneous functions).
-
-Model equations: six endogenous (Y\_t, C\_t, I\_t, K\_{t+1}, w\_t, R\_t), three exogenous (A, K\_t, N\_t), two parameters (s, δ).
-
-```latex
-Y_t = C_t + I_t, \quad I_t = sY_t, \quad C_t = (1-s)Y_t, \quad K_{t+1} = I_t + (1-\delta)K_t
-```
-
-where s = saving (investment) rate, 0 < s < 1; δ = depreciation rate, 0 < δ < 1. Lawn-mower example: K = 10, δ = 0.1, Y = 3; C = 3 gives K' = 9; C = 2 gives K' = 10; C = 1 gives K' = 11.
-
-### The central equation (per worker)
-
-Divide by N\_t (constant labor) and define k\_t = K\_t/N\_t, f(k\_t) = F(k\_t, 1):
-
-```latex
-k_{t+1} = sA f(k_t) + (1-\delta)k_t \qquad\text{equivalently}\qquad \Delta k_{t+1} = sAf(k_t) - \delta k_t
-```
-
-where k\_t = capital per worker; f(k\_t) = output per worker per unit of A; sAf(k\_t) = investment per worker; δk\_t = depreciation ("break-even investment"); Δk\_{t+1} = k\_{t+1} − k\_t.
-
-Other variables: y\_t = Af(k\_t); c\_t = (1−s)Af(k\_t); i\_t = sAf(k\_t); R\_t = Af'(k\_t); w\_t = A\[f(k\_t) − k\_t f'(k\_t)\].
-
-### 5.2 Graphical analysis
-
-- Plot k\_{t+1} against k\_t with a 45° line. Slope dk\_{t+1}/dk\_t = sAf'(k\_t) + (1−δ): positive, falling in k.
-- Inada conditions: f'(k) --> ∞ as k --> 0 and f'(k) --> 0 as k --> ∞. So the curve starts steeper than 45° and ends with slope 1−δ < 1, crossing the 45° line exactly once at k\*.
-- Below k\*: curve above the 45° line, capital grows. Above k\*: capital shrinks. Movement is fast far from k\*, slow near it.
-- Alternative picture: investment curve sAf(k) vs depreciation line δk; they cross at k\*.
-
-### 5.3 Steady state with Cobb-Douglas
-
-```latex
-k^* = \left(\frac{sA}{\delta}\right)^{\frac{1}{1-\alpha}}, \quad y^* = A(k^*)^{\alpha}, \quad c^* = (1-s)A(k^*)^{\alpha}, \quad R^* = \frac{\alpha\delta}{s}, \quad w^* = (1-\alpha)A(k^*)^{\alpha}
-```
-
-where k\*, y\*, c\*, R\*, w\* = steady-state capital, output, consumption per worker, rental rate and wage. k\* rises with s and A, falls with δ. R\* does not depend on A (A cancels).
-
-### 5.4 Experiments: permanent increases in s and A
-
-| Variable | ↑ s: period t | ↑ s: afterward | ↑ A: period t | ↑ A: afterward |
-| --- | --- | --- | --- | --- |
-| k\_t | 0 | rises to higher k\* | 0 | rises to higher k\* |
-| y\_t | 0 | rises | jumps up (direct effect) | keeps rising |
-| c\_t | falls (bigger slice saved) | rises; new level above or below old (ambiguous) | jumps up | rises |
-| i\_t | jumps up | rises | jumps up | rises |
-| w\_t | 0 | rises (F\_KN > 0) | jumps up | rises |
-| R\_t | 0 | falls (F\_KK < 0), ends lower | jumps up | falls back to original R\* |
-| Output growth | 0 in t | jumps positive in t+1, decays to 0 | jumps positive in t | decays to 0 |
-
-Punchline: capital accumulation cannot sustain growth (s is capped at 1); only repeated increases in A can.
-
-### 5.5 The Golden Rule
-
-The Golden Rule saving rate maximizes steady-state consumption c\* = (1−s)Af(k\*). Derivation: totally differentiate sAf(k\*) = δk\* and dc\* = (1−s)Af'(k\*)dk\* − Af(k\*)ds to get dc\*/ds = Af'(k\*) − δ.
-
-```latex
-Af'(k^*_{gr}) = \delta \qquad \text{Cobb-Douglas: } s_{gr} = \alpha
-```
-
-where k\*\_gr = the Golden Rule steady-state capital; s\_gr = Golden Rule saving rate.
-
-- Intuition: raising k\* adds Af'(k\*) to output but δ to required investment; consumption rises while MPK > δ.
-- s < s\_gr: raising s lowers consumption now, raises it in the long run. Whether that is desirable depends on impatience and on how later generations are weighed, so no normative conclusion.
-- s > s\_gr: the economy is **dynamically inefficient**. Cutting s raises consumption immediately and at every date after, so it is unambiguously better.
-- Saving rate that maximizes steady-state output: s = 1, but then c\* = 0, so no household wants it.
-
-### Lecture 4 framing
-
-Solow is the model of long-run growth and cross-country income differences; its main implication is that productivity (not capital) explains sustained growth and income gaps; its weakness is that A is exogenous (what is it, and how do you raise it?). Ch 12 reuses Solow's production function and accumulation equation but lets the firm choose investment.
-
-## Unit 4 — Two-period consumption-saving (Ch 9, Lecture 2)
+### Two-period consumption-saving (Ch 9, Lecture 2)
 
 A forward-looking household that faces a present-value budget constraint chooses consumption so that the Euler equation holds; the result is a consumption function C\_t = C^d(Y\_t, Y\_{t+1}, r\_t) that rises with both incomes (MPC between 0 and 1) and, by assumption, falls with r\_t. Everything is real (one good, "fruit"); consumption is 60–70% of GDP.
 
-### 9.1 Setup and budget constraints
+#### 9.1 Setup and budget constraints
 
 ```latex
 C_t + S_t \le Y_t, \qquad C_{t+1} + S_{t+1} - S_t \le Y_{t+1} + r_t S_t
@@ -246,7 +162,7 @@ C_t + \frac{C_{t+1}}{1+r_t} = Y_t + \frac{Y_{t+1}}{1+r_t}
 
 The intertemporal budget constraint (IBC): the present value of consumption equals the present value of income. Present value of F goods next period = F/(1+r\_t).
 
-### Preferences
+#### Preferences
 
 ```latex
 U = u(C_t) + \beta\, u(C_{t+1}), \qquad u'(\cdot) > 0, \; u''(\cdot) < 0
@@ -256,7 +172,7 @@ where U = lifetime utility (ordinal; can be negative); u(·) = flow utility; β 
 
 Example utility functions: linear θC (no diminishing MU); quadratic C − (θ/2)C² (satiation above 1/θ; u''' = 0); log ln C (u' = 1/C, u'' = −C^{−2}); isoelastic (C^{1−σ} − 1)/(1−σ), which becomes ln C as σ --> 1 by L'Hôpital.
 
-### 9.2 Optimization and the Euler equation
+#### 9.2 Optimization and the Euler equation
 
 Solve the IBC for C\_{t+1} = (1+r\_t)(Y\_t − C\_t) + Y\_{t+1}, substitute into U, differentiate with respect to C\_t (the chain rule gives the −(1+r\_t) term), set to zero:
 
@@ -272,7 +188,7 @@ where the left side of the second form is the marginal rate of substitution (MRS
 - Isoelastic: ln C\_{t+1} − ln C\_t ≈ (1/σ)\[ln β + r\_t\]; 1/σ is the elasticity of intertemporal substitution.
 - Lagrangian route (Lecture 2 part 4): L = u(C\_t) + βu(C\_{t+1}) + λ\[Y\_t + Y\_{t+1}/(1+r\_t) − C\_t − C\_{t+1}/(1+r\_t)\]. FOCs: u'(C\_t) = λ and βu'(C\_{t+1}) = λ/(1+r\_t); dividing gives the Euler equation. λ = the shadow value of an extra unit of resources (marginal utility of wealth). The Lagrangian scales more easily to many periods.
 
-### 9.3 Indifference curve / budget line and the consumption function
+#### 9.3 Indifference curve / budget line and the consumption function
 
 - Budget line: slope −(1+r\_t); vertical intercept (1+r\_t)Y\_t + Y\_{t+1} (save everything); horizontal intercept Y\_t + Y\_{t+1}/(1+r\_t) (borrow the maximum); passes through the endowment point (Y\_t, Y\_{t+1}).
 - Indifference curve slope: −u'(C\_t)/\[βu'(C\_{t+1})\]; bowed in (convex) because u'' < 0; northeast = higher utility; curves never cross.
@@ -301,11 +217,11 @@ C_t = \frac{1}{1+\beta}\left[Y_t + \frac{Y_{t+1}}{1+r_t}\right], \qquad MPC = \f
 
 where the bracket = present value of lifetime income. ∂C\_t/∂Y\_{t+1} = \[1/(1+β)\]\[1/(1+r\_t)\]. More impatient (β --> 0) means MPC --> 1. If Y\_{t+1} = 0, ∂C\_t/∂r\_t = 0 (income and substitution effects cancel for log utility). r\_t can be negative but never below −1.
 
-### Permanent income hypothesis (Lecture 2 part 3)
+#### Permanent income hypothesis (Lecture 2 part 3)
 
 Friedman (1957): consumption depends on permanent income (present value of lifetime income); with r = 0 and β = 1, consumption = average lifetime income. Implications: consumption is forward-looking and should not react to predictable income changes; MPC < 1; the longer you live, the lower the MPC; regressing C\_t on Y\_t does not identify the MPC when income changes are persistent.
 
-### 9.4 Extensions (you are responsible for these per Lecture 2)
+#### 9.4 Extensions (you are responsible for these per Lecture 2)
 
 **9.4.1 Wealth.** Household starts with H\_{t−1} units of an asset priced Q\_t. With H\_t = 0:
 
@@ -331,11 +247,11 @@ where C^h, C^l = next-period consumption in the high and low states; E\[·\] = e
 
 **9.4.6 Borrowing constraints.** Strict constraint S\_t ≥ 0 puts a vertical kink at the endowment point; a costlier borrowing rate (r^b > r^s) gives a milder kink. If binding (the household wants to borrow): C\_t = Y\_t, C\_{t+1} = Y\_{t+1}, Euler equation fails, MPC = 1, and an expected rise in Y\_{t+1} does not move C\_t. Implications: "targeted and temporary" tax cuts work for constrained households; constraints help explain random-walk failures; they make markets incomplete.
 
-## Unit 5 — Multi-period consumption and the life cycle (Ch 10)
+### Multi-period consumption and the life cycle (Ch 10)
 
 With T+1 periods the two-period logic repeats pair by pair: one Euler equation per adjacent pair of periods, one IBC, and a sharper gap between transitory changes (tiny MPC) and permanent changes (spent in full).
 
-### 10.1 Multi-period generalization
+#### 10.1 Multi-period generalization
 
 ```latex
 \sum_{j=0}^{T} \frac{C_{t+j}}{(1+r)^j} = \sum_{j=0}^{T} \frac{Y_{t+j}}{(1+r)^j}, \qquad U = \sum_{j=0}^{T} \beta^j u(C_{t+j})
@@ -357,7 +273,7 @@ C_t = \frac{1}{1+\beta+\beta^2}\left[Y_t + \frac{Y_{t+1}}{1+r} + \frac{Y_{t+2}}{
 
 where the MPC 1/(1+β+β²) is smaller than the two-period 1/(1+β): more future periods to spread a windfall over.
 
-### Constant consumption when β(1+r) = 1
+#### Constant consumption when β(1+r) = 1
 
 If β(1+r) = 1 the Euler equations imply C\_t = C\_{t+1} = … = C̄ (impatience β < 1 exactly offsets the return r > 0). If β(1+r) > 1 consumption rises over time; if < 1 it falls. Using 1/(1+r) = β and the geometric sum 1 + β + … + β^T = (1−β^{T+1})/(1−β):
 
@@ -367,14 +283,14 @@ If β(1+r) = 1 the Euler equations imply C\_t = C\_{t+1} = … = C̄ (impatience
 
 where C̄ = the constant consumption level; the fraction in front is the MPC.
 
-### 10.2 MPC and permanent vs transitory income
+#### 10.2 MPC and permanent vs transitory income
 
 - MPC falls as T rises (young people with long horizons should have smaller MPCs than old people; overlapping-generations implication). For large T, MPC ≈ 1 − β (β = 0.95 gives 0.05).
 - Income further in the future moves C̄ less (factor β^j).
 - Transitory change: dC̄/dY\_t = MPC (small). Permanent change (all Y\_{t+j} rise equally): dC̄/dY\_t = 1 — spent in full, saving unchanged.
 - With β = 1 and r = 0: C̄ = average lifetime income = \[1/(T+1)\]ΣY. Book example: 100 periods of income 1. A one-period rise to 2 lifts average income to 1.01, so C rises 0.01 and saving rises 0.99. A permanent rise to 2 lifts C by 1 with no change in saving.
 
-### 10.3 The life cycle
+#### 10.3 The life cycle
 
 Income starts at Y\_t, grows at gross rate G\_Y = 1 + g\_Y until retirement date R, then a flat benefit Y^R until death at T. With β(1+r) = 1 consumption is flat.
 
@@ -385,11 +301,15 @@ Income starts at Y\_t, grows at gross rate G\_Y = 1 + g\_Y until retirement date
 
 Review-question answers: an old and a young lottery winner — the old person raises current consumption more (fewer periods, larger MPC). A permanent tax cut moves consumption more than a one-time cut. More generous Social Security raises prime-age consumption (higher lifetime PV of income).
 
-## Unit 6 — Equilibrium in an endowment economy (Ch 11, Lecture 3 parts 1–3)
+## Module 3 — Endowment-economy equilibrium and fiscal policy (L03)
+
+**Lecture:** L03\_01, plus the L03\_02 homework review · **Textbook:** Ch 11, 13 · **Problem set:** PS 3 (Ch 11 Ex 1, 3; Ch 13 Ex 1)
+
+### Equilibrium in an endowment economy (Ch 11, Lecture 3 parts 1–3)
 
 When output is fixed and agents are identical, nobody can save in aggregate, so r\_t must adjust until the household is content to consume exactly its income; r\_t therefore measures how plentiful the future is expected to be relative to the present.
 
-### Three modes of analysis (Lecture 3)
+#### Three modes of analysis (Lecture 3)
 
 1. Decision theory: optimal rules taking prices as given (Ch 9).
 2. Partial equilibrium: one market's price, others given.
@@ -397,7 +317,7 @@ When output is fixed and agents are identical, nobody can save in aggregate, so 
 
 **Competitive equilibrium** = a set of prices and allocations such that (i) all agents behave optimally taking prices as given and (ii) all markets clear simultaneously. Here the price is r\_t (the intertemporal price of goods), the allocations are C\_t and C\_{t+1}, and the market is the bond (saving) market.
 
-### 11.1–11.2 Setup and market clearing
+#### 11.1–11.2 Setup and market clearing
 
 L households indexed by j, identical preferences, possibly different incomes Y\_t(j), Y\_{t+1}(j); each solves the Ch 9 problem, so C\_t(j) = C^d(Y\_t(j), Y\_{t+1}(j), r\_t). All face the same r\_t, so all have the same consumption growth rate, not the same level.
 
@@ -407,7 +327,7 @@ S_t = \sum_{j=1}^{L} S_t(j) = 0 \quad \text{--> } \quad \sum_{j=1}^{L} Y_t(j) = 
 
 where S\_t(j) = saving of household j; L = number of households; Y\_t, C\_t = aggregate income and consumption. One agent's saving is another's borrowing; with no capital there is no other way to move resources through time (I\_t = 0).
 
-### 11.3 Identical agents and the graphs
+#### 11.3 Identical agents and the graphs
 
 Normalize L = 1 (representative agent). Two equations, two unknowns (C\_t and r\_t): C\_t = C^d(Y\_t, Y\_{t+1}, r\_t) and C\_t = Y\_t, so Y\_t = C^d(Y\_t, Y\_{t+1}, r\_t).
 
@@ -424,7 +344,7 @@ Normalize L = 1 (representative agent). Two equations, two unknowns (C\_t and r\
 
 General lesson: r\_t rises when the future is expected to be relatively plentiful and falls when it looks lean; r\_t moves to undo the smoothing the household would like to do. Data: 10-year real rate vs expected 10-year growth (SPF) have correlation about 0.3. Lecture 3's gloss: very low world interest rates may reflect pessimism about the future.
 
-### 11.3.3 Algebraic example (log utility)
+#### 11.3.3 Algebraic example (log utility)
 
 Euler: C\_{t+1} = β(1+r\_t)C\_t. Impose C\_t = Y\_t, C\_{t+1} = Y\_{t+1}:
 
@@ -434,7 +354,7 @@ Y_t = \frac{Y_{t+1}}{\beta(1+r_t)} \;(\text{IS}) \qquad \therefore \qquad 1 + r_
 
 where Y\_{t+1}/Y\_t = expected gross output growth; r\_t can be negative if the future is poor enough and β is near 1.
 
-### 11.4 Agents with different endowments
+#### 11.4 Agents with different endowments
 
 Type 1 (L\_1 of them): Y\_t(1) = 1, Y\_{t+1}(1) = 0. Type 2 (L\_2): Y\_t(2) = 0, Y\_{t+1}(2) = 1. Log utility:
 
@@ -448,15 +368,15 @@ where L\_1, L\_2 = numbers of each type; aggregate Y\_t = L\_1 and Y\_{t+1} = L\
 - Any split of the same aggregate endowments (e.g. 0.75 / 0.25(L\_2/L\_1)) gives the same r\_t.
 - **Complete markets:** if everyone can freely borrow and lend, the income distribution is irrelevant for aggregate prices and quantities — the justification for representative-agent models. Borrowing constraints break this.
 
-### Yield curve (Ch 11 Ex 3, worked in the Problem sets tab)
+#### Yield curve (Ch 11 Ex 3, worked in the Problem sets tab)
 
 1 + r\_t = Y\_{t+1}/(βY\_t), 1 + r\_{t+1} = Y\_{t+2}/(βY\_{t+1}), long rate 1 + r\_{2,t} = (1/β)(Y\_{t+2}/Y\_t)^{1/2}. Flat output --> flat curve; Y\_{t+2} low enough --> inverted curve, a recession signal.
 
-## Unit 7 — Fiscal policy and Ricardian equivalence (Ch 13, Lecture 3 parts 4–6)
+### Fiscal policy and Ricardian equivalence (Ch 13, Lecture 3 parts 4–6)
 
 With lump-sum taxes and forward-looking households, only the path of government spending matters: taxes and debt drop out of every equilibrium condition. Holding r\_t fixed the spending multiplier is 1, but with output fixed the equilibrium multiplier is 0 because r\_t rises and crowds out consumption one-for-one.
 
-### 13.1 The government
+#### 13.1 The government
 
 ```latex
 G_t \le T_t + B^G_t, \qquad G_{t+1} + r_tB^G_t \le T_{t+1} + B^G_{t+1} - B^G_t
@@ -470,7 +390,7 @@ G_t + \frac{G_{t+1}}{1+r_t} = T_t + \frac{T_{t+1}}{1+r_t}, \qquad B^G_t = \frac{
 
 The budget balances in present value, not period by period; today's debt equals the present value of tomorrow's primary surplus (taxes minus spending, excluding interest). Transfers enter the model as negative taxes, not spending.
 
-### 13.2 Fiscal policy in an endowment economy
+#### 13.2 Fiscal policy in an endowment economy
 
 Household IBC with taxes, then impose the government IBC:
 
@@ -486,7 +406,7 @@ where Y\_t − G\_t = income net of government spending (taxes have dropped out)
 
 **Ricardian equivalence** (Barro 1974, 1979; named for David Ricardo): how spending is financed is irrelevant. A tax cut of 1 today with G fixed requires T\_{t+1} to rise by (1+r\_t), whose present value is (1+r\_t)/(1+r\_t) = 1: a wash. Government debt is not net wealth — the household will pay itself the principal and interest through future taxes. It fails if (1) taxes are not lump sum, (2) there are borrowing constraints, (3) households are not forward-looking or do not believe the government's IBC, (4) the government outlives households (overlapping generations).
 
-### Graphical effects (endowment economy)
+#### Graphical effects (endowment economy)
 
 Autonomous expenditure: E\_0 = C^d(−G\_t, Y\_{t+1} − G\_{t+1}, r\_t) + G\_t. So ∂E\_0/∂G\_t = 1 − MPC > 0.
 
@@ -503,7 +423,7 @@ Log-utility version:
 Y_t = \frac{Y_{t+1} - G_{t+1}}{\beta(1+r_t)} + G_t \;(\text{IS}) \qquad \therefore \qquad 1 + r_t = \frac{Y_{t+1} - G_{t+1}}{\beta(Y_t - G_t)}
 ```
 
-### The multiplier (Lecture 3 part 6 and Ch 18)
+#### The multiplier (Lecture 3 part 6 and Ch 18)
 
 Totally differentiate Y\_t = C^d(Y\_t − G\_t, Y\_{t+1} − G\_{t+1}, r\_t) + G\_t with r\_t, Y\_{t+1}, G\_{t+1} fixed:
 
@@ -525,17 +445,113 @@ dY_t = MPC\,dY_t + dG_t \quad \therefore \quad \left.\frac{dY_t}{dG_t}\right|_{d
 | Non-Ricardian, deficit-financed | 1/(1 − MPC) | 0 (r rises by more) |
 | Log utility, non-Ricardian (MPC = 1/(1+β)) | (1+β)/β | 0 |
 
-### 13.3 Fiscal policy in a production economy
+#### 13.3 Fiscal policy in a production economy
 
 Same logic: the household's Euler equation and labor FOC contain no fiscal terms; C\_t = C^d(Y\_t − G\_t, Y\_{t+1} − G\_{t+1}, r\_t); N\_t = N^s(w\_t, θ\_t) (GHH preferences, no wealth effect of G on labor supply); firm side unchanged; market clearing S\_t − B^G\_t = I\_t gives Y\_t = C\_t + I\_t + G\_t. Six equations, six endogenous (Y, N, C, I, w, r), exogenous G\_t, G\_{t+1}, A\_t, A\_{t+1}, θ\_t, K\_t. Taxes and debt still absent: Ricardian equivalence holds.
 
 Review-question logic: "Ricardian equivalence shows deficits don't matter" — only for financing a given spending path under its four assumptions; spending itself matters. "Bond-financed spending won't cut consumption because we owe it to ourselves" — wrong: households anticipate the future taxes. "Tax cuts stimulate consumption" — incomplete unless spending changes, households are constrained, or taxes are distortionary.
 
-## Unit 8 — Production, labor demand, investment, labor supply (Ch 12, Lecture 4 parts 2–3)
+## Module 4 — Solow growth, firms and the labor market (L04)
+
+**Lecture:** L04, parts 1–3 · **Textbook:** Ch 5, 12 · **Problem set:** PS 4 (Ch 12 Ex 1, 2)
+
+### The Solow growth model (Ch 5, Lecture 4 part 1)
+
+From any positive starting point, capital per worker converges to a unique steady state k\*; a higher saving rate or productivity raises the level of k\* but gives only a temporary burst of growth, so sustained growth must come from continual productivity gains. Solow uses rules of thumb (constant saving rate, inelastic labor) rather than optimization.
+
+#### 5.1 Production, consumption, investment
+
+Capital (i) must be produced, (ii) helps produce output, (iii) is not used up in production. It is a stock that can be accumulated; labor is a flow and an endowment.
+
+```latex
+Y_t = A\,F(K_t, N_t), \qquad F(K_t,N_t) = K_t^{\alpha} N_t^{1-\alpha}
+```
+
+where Y\_t = output; A = productivity (exogenous; changes are permanent in this chapter); K\_t = capital stock; N\_t = labor; α = capital's exponent, 0 < α < 1.
+
+Production-function assumptions (asked often): F\_K > 0, F\_N > 0 (positive marginal products); F\_KK < 0, F\_NN < 0 (diminishing marginal products); F\_KN > 0 (more capital raises the marginal product of labor); constant returns to scale F(λK, λN) = λF(K, N); both inputs necessary F(0, N) = F(K, 0) = 0. Constant returns and diminishing marginal products do not contradict each other: CRS scales both inputs; diminishing returns vary one.
+
+Firm FOCs (competitive factor prices):
+
+```latex
+w_t = A F_N(K_t, N_t), \qquad R_t = A F_K(K_t, N_t)
+```
+
+where w\_t = real wage (units of fruit per hour); R\_t = real rental rate on capital; F\_N, F\_K = marginal products of labor and capital. With CRS, profit is zero and w\_t N\_t + R\_t K\_t = Y\_t (Euler's theorem for homogeneous functions).
+
+Model equations: six endogenous (Y\_t, C\_t, I\_t, K\_{t+1}, w\_t, R\_t), three exogenous (A, K\_t, N\_t), two parameters (s, δ).
+
+```latex
+Y_t = C_t + I_t, \quad I_t = sY_t, \quad C_t = (1-s)Y_t, \quad K_{t+1} = I_t + (1-\delta)K_t
+```
+
+where s = saving (investment) rate, 0 < s < 1; δ = depreciation rate, 0 < δ < 1. Lawn-mower example: K = 10, δ = 0.1, Y = 3; C = 3 gives K' = 9; C = 2 gives K' = 10; C = 1 gives K' = 11.
+
+#### The central equation (per worker)
+
+Divide by N\_t (constant labor) and define k\_t = K\_t/N\_t, f(k\_t) = F(k\_t, 1):
+
+```latex
+k_{t+1} = sA f(k_t) + (1-\delta)k_t \qquad\text{equivalently}\qquad \Delta k_{t+1} = sAf(k_t) - \delta k_t
+```
+
+where k\_t = capital per worker; f(k\_t) = output per worker per unit of A; sAf(k\_t) = investment per worker; δk\_t = depreciation ("break-even investment"); Δk\_{t+1} = k\_{t+1} − k\_t.
+
+Other variables: y\_t = Af(k\_t); c\_t = (1−s)Af(k\_t); i\_t = sAf(k\_t); R\_t = Af'(k\_t); w\_t = A\[f(k\_t) − k\_t f'(k\_t)\].
+
+#### 5.2 Graphical analysis
+
+- Plot k\_{t+1} against k\_t with a 45° line. Slope dk\_{t+1}/dk\_t = sAf'(k\_t) + (1−δ): positive, falling in k.
+- Inada conditions: f'(k) --> ∞ as k --> 0 and f'(k) --> 0 as k --> ∞. So the curve starts steeper than 45° and ends with slope 1−δ < 1, crossing the 45° line exactly once at k\*.
+- Below k\*: curve above the 45° line, capital grows. Above k\*: capital shrinks. Movement is fast far from k\*, slow near it.
+- Alternative picture: investment curve sAf(k) vs depreciation line δk; they cross at k\*.
+
+#### 5.3 Steady state with Cobb-Douglas
+
+```latex
+k^* = \left(\frac{sA}{\delta}\right)^{\frac{1}{1-\alpha}}, \quad y^* = A(k^*)^{\alpha}, \quad c^* = (1-s)A(k^*)^{\alpha}, \quad R^* = \frac{\alpha\delta}{s}, \quad w^* = (1-\alpha)A(k^*)^{\alpha}
+```
+
+where k\*, y\*, c\*, R\*, w\* = steady-state capital, output, consumption per worker, rental rate and wage. k\* rises with s and A, falls with δ. R\* does not depend on A (A cancels).
+
+#### 5.4 Experiments: permanent increases in s and A
+
+| Variable | ↑ s: period t | ↑ s: afterward | ↑ A: period t | ↑ A: afterward |
+| --- | --- | --- | --- | --- |
+| k\_t | 0 | rises to higher k\* | 0 | rises to higher k\* |
+| y\_t | 0 | rises | jumps up (direct effect) | keeps rising |
+| c\_t | falls (bigger slice saved) | rises; new level above or below old (ambiguous) | jumps up | rises |
+| i\_t | jumps up | rises | jumps up | rises |
+| w\_t | 0 | rises (F\_KN > 0) | jumps up | rises |
+| R\_t | 0 | falls (F\_KK < 0), ends lower | jumps up | falls back to original R\* |
+| Output growth | 0 in t | jumps positive in t+1, decays to 0 | jumps positive in t | decays to 0 |
+
+Punchline: capital accumulation cannot sustain growth (s is capped at 1); only repeated increases in A can.
+
+#### 5.5 The Golden Rule
+
+The Golden Rule saving rate maximizes steady-state consumption c\* = (1−s)Af(k\*). Derivation: totally differentiate sAf(k\*) = δk\* and dc\* = (1−s)Af'(k\*)dk\* − Af(k\*)ds to get dc\*/ds = Af'(k\*) − δ.
+
+```latex
+Af'(k^*_{gr}) = \delta \qquad \text{Cobb-Douglas: } s_{gr} = \alpha
+```
+
+where k\*\_gr = the Golden Rule steady-state capital; s\_gr = Golden Rule saving rate.
+
+- Intuition: raising k\* adds Af'(k\*) to output but δ to required investment; consumption rises while MPK > δ.
+- s < s\_gr: raising s lowers consumption now, raises it in the long run. Whether that is desirable depends on impatience and on how later generations are weighed, so no normative conclusion.
+- s > s\_gr: the economy is **dynamically inefficient**. Cutting s raises consumption immediately and at every date after, so it is unambiguously better.
+- Saving rate that maximizes steady-state output: s = 1, but then c\* = 0, so no household wants it.
+
+#### Lecture 4 framing
+
+Solow is the model of long-run growth and cross-country income differences; its main implication is that productivity (not capital) explains sustained growth and income gaps; its weakness is that A is exogenous (what is it, and how do you raise it?). Ch 12 reuses Solow's production function and accumulation equation but lets the firm choose investment.
+
+### Production, labor demand, investment, labor supply (Ch 12, Lecture 4 parts 2–3)
 
 The firm hires labor until the marginal product equals the wage (static) and invests until the future marginal product of capital covers interest plus depreciation (forward-looking); the household adds a labor-leisure choice whose FOC sets MRS = w\_t. These rules become the labor demand, investment demand and labor supply curves of the neoclassical model.
 
-### 12.1 The firm
+#### 12.1 The firm
 
 Same production function and accumulation equation as Solow, but A\_t keeps its time subscript so we can separate a transitory change (A\_t) from an anticipated one (A\_{t+1}). The firm must borrow to finance investment: B^I\_t = I\_t. The household owns the firm; management is separate.
 
@@ -577,7 +593,7 @@ N_t = \left[\frac{(1-\alpha)A_tK_t^{\alpha}}{w_t}\right]^{1/\alpha}, \qquad K_{t
 
 **12.1.1 Debt vs equity (Modigliani–Miller).** Finance a fraction q of investment by cutting today's dividend and 1−q by borrowing. The FOC for K\_{t+1} is identical for every q, so financing does not matter — as long as there are no taxes, bankruptcy costs, or asymmetric information. The course uses debt finance to set up credit spreads.
 
-### 12.2 The household with a labor choice
+#### 12.2 The household with a labor choice
 
 ```latex
 U = u(C_t, 1-N_t) + \beta\,u(C_{t+1}, 1-N_{t+1}), \qquad C_t + S_t = w_tN_t + D_t, \quad C_{t+1} = w_{t+1}N_{t+1} + D_{t+1} + D^I_{t+1} + (1+r_t)S_t
@@ -603,17 +619,21 @@ C_t = C^d(Y_t, Y_{t+1}, r_t)\;[+,+,-], \qquad N_t = N^s(w_t, \theta_t)\;[+,-]
 
 (The income in the IBC is really w\_tN\_t + D\_t = Y\_t − I\_t; writing Y\_t is the standard shortcut.) PS 4 Ex 1 result: one-period log household with C = wN has N = 1/(1+θ), independent of w — income and substitution effects cancel exactly.
 
-### 12.3–12.4 Intermediary and equilibrium
+#### 12.3–12.4 Intermediary and equilibrium
 
 The intermediary takes deposits S\_t and lends B^I\_t, earning D^I\_{t+1} = r\_tB^I\_t − r\_tS\_t = 0 in equilibrium (positive only with a spread). Loan market clearing S\_t = B^I\_t = I\_t plus the budget constraints gives Y\_t = C\_t + I\_t, and the same in t+1.
 
 Equilibrium: C\_t = C^d(Y\_t, Y\_{t+1}, r\_t); N\_t = N^s(w\_t, θ\_t); N\_t = N^d(w\_t, A\_t, K\_t); I\_t = I^d(r\_t, A\_{t+1}, K\_t); Y\_t = A\_tF(K\_t, N\_t); Y\_t = C\_t + I\_t. Six equations; endogenous C\_t, N\_t, Y\_t, I\_t, w\_t, r\_t; exogenous A\_t, A\_{t+1}, K\_t, θ\_t (+ f\_t). Two prices: w\_t clears the labor market; r\_t clears the goods (equivalently loanable-funds) market. The endowment economy is the special case with N\_t and I\_t fixed. Unlike the endowment economy, households can now smooth in aggregate: more desired saving lowers r\_t, which raises investment.
 
-## Unit 9 — The neoclassical model: IS, Ys and money (Ch 17, Lecture 5 part 1)
+## Module 5 — The neoclassical model and the effects of shocks (L05)
+
+**Lecture:** L05, parts 1–2 · **Textbook:** Ch 17–18 (plus Ch 14.2, 15, 16 from the same PDF) · **Problem set:** PS 5 (Ch 17 Ex 1, 2; Ch 18 Ex 1, 2)
+
+### The neoclassical model: IS, Ys and money (Ch 17, Lecture 5 part 1)
 
 The neoclassical (real business cycle) model has optimizing agents, frictionless markets and a vertical Ys curve, so output is supply-determined; the classical dichotomy lets you solve the real block (IS and Ys) first, then read the price level off the money market. Lecture 5 calls it the right description of the medium run (a couple of years to a decade).
 
-### 17.1–17.4 Decision rules and equilibrium
+#### 17.1–17.4 Decision rules and equilibrium
 
 ```latex
 \begin{aligned}
@@ -630,7 +650,7 @@ where M\_t = money supply (exogenous, set by government); P\_t = price level (do
 - Ricardian equivalence lets us act as if T\_t = G\_t.
 - Classical dichotomy: the six real equations contain no nominal variables, so real variables are determined without them.
 
-### 17.5.1 The demand side: IS curve
+#### 17.5.1 The demand side: IS curve
 
 IS = "investment = saving": Y\_t − C\_t − G\_t = (Y\_t − T\_t − C\_t) + (T\_t − G\_t) = S^pr\_t + S^g\_t = I\_t.
 
@@ -652,7 +672,7 @@ where C\_r = ∂C^d/∂r\_t < 0; I\_r = ∂I^d/∂r\_t < 0. More interest-sensit
 
 IS shifters (Lecture 5): ↑ A\_{t+1} right; ↑ f\_t left; ↑ G\_t right (by 1 − MPC in E\_0, horizontally by ΔG); ↑ G\_{t+1} left; ↓ K\_t right.
 
-### 17.5.2 The supply side: Ys curve
+#### 17.5.2 The supply side: Ys curve
 
 Four-part graph: labor market (N^s up, N^d down) sets w\_t and N\_t; production function Y = A\_tF(K\_t, N) maps N\_t to Y\_t; a 45° line reflects Y onto the horizontal axis; plot against r\_t. Since r\_t affects neither labor supply, labor demand nor the production function, **Ys is vertical**.
 
@@ -660,17 +680,17 @@ Ys shifters: ↑ A\_t right (N^d shifts right and the production function shifts
 
 Upward-sloping Ys (PS 5, Ch 17 Ex 2): if N^s = N^s(w\_t, θ\_t, r\_t) with ∂N^s/∂r\_t > 0 — a higher r\_t makes working today and saving the pay more attractive (intertemporal substitution of labor), and lowers lifetime wealth so u\_C rises — then ↑ r shifts N^s right, raises N and Y, and Ys slopes up. Demand shocks then move output somewhat, but data still require mostly supply shocks.
 
-### 17.5.3 Bringing it together
+#### 17.5.3 Bringing it together
 
 The IS–Ys intersection gives r\_t and Y\_t; the labor market gives N\_t and w\_t; the consumption and investment functions at that r\_t and Y\_t give the split between C\_t and I\_t.
 
-### 17.5.4 The nominal side
+#### 17.5.4 The nominal side
 
 - Money demand in (M, P) space slopes up from the origin (P is the price of goods in money; the price of money is 1/P, against which demand slopes down). Position depends on r\_t, π^e\_{t+1} and Y\_t.
 - Money supply is vertical at M\_t. Their intersection gives P\_t; i\_t = r\_t + π^e\_{t+1}.
 - ↑ Y\_t or ↓ i\_t raises money demand (curve pivots right), lowering P\_t for a given M\_t.
 
-## Unit 10 — Effects of shocks (Ch 18, Lecture 5 part 2)
+### Effects of shocks (Ch 18, Lecture 5 part 2)
 
 Only supply shocks (A\_t, θ\_t) move output, employment and the wage; demand shocks (A\_{t+1}, f\_t, G\_t, G\_{t+1}) move only r\_t and the C/I split; nominal shocks (M\_t, π^e\_{t+1}) move only P\_t and i\_t. Memorize this table — it is the Lecture 5 table extended with the Ch 18 nominal columns and PS 5.
 
@@ -685,7 +705,7 @@ Only supply shocks (A\_t, θ\_t) move output, employment and the wage; demand sh
 | ↑ M\_t | nominal | 0 | 0 | 0 | 0 | 0 | 0 | 0 | + |
 | ↑ π^e\_{t+1} | nominal | 0 | 0 | 0 | 0 | 0 | 0 | + | + |
 
-### Recipe for any shock (exam template)
+#### Recipe for any shock (exam template)
 
 1. Classify it: which equations contain it? Supply (labor market or production function), demand (consumption or investment function, resource constraint), or nominal.
 2. Shift the curve(s): Ys, IS, or neither. Say why (e.g. ↑ A\_t shifts N^d right and the production function up).
@@ -694,7 +714,7 @@ Only supply shocks (A\_t, θ\_t) move output, employment and the wage; demand sh
 5. C\_t and I\_t: at the new r\_t and Y\_t. If Y\_t and G\_t are unchanged, C\_t + I\_t is fixed, so one can rise only if the other falls.
 6. Money market: i\_t = r\_t + π^e\_{t+1}; ↑ i\_t or ↓ Y\_t lowers money demand, so P\_t rises with M\_t fixed.
 
-### Worked logic for each shock
+#### Worked logic for each shock
 
 - **↑ A\_t:** N^d right, so N and w rise; production function shifts up; Y rises twice over (direct + more labor); Ys right; r falls to make expenditure equal the higher output (move down IS), so C and I both rise. Lower i and higher Y raise money demand, so P falls.
 - **↑ θ\_t:** N^s left, N falls, w rises; Y falls along an unchanged production function; Ys left; r rises, C and I fall; i rises, Y falls, money demand falls, P rises.
@@ -705,7 +725,7 @@ Only supply shocks (A\_t, θ\_t) move output, employment and the wage; demand sh
 - **↑ M\_t:** money is neutral — only the money supply curve moves; P rises in proportion; i unchanged. Changing M is just relabeling the unit of account; non-neutrality needs sticky prices or wages (Keynesian models).
 - **↑ π^e\_{t+1}:** i rises one-for-one at the same r; money demand falls; P rises today — expected inflation is partly self-fulfilling, the idea behind promising future monetary expansion.
 
-### Elasticities (PS 5, Ch 18 Ex 1–2)
+#### Elasticities (PS 5, Ch 18 Ex 1–2)
 
 | Case | N\_t | w\_t | Y\_t | r\_t |
 | --- | --- | --- | --- | --- |
@@ -716,18 +736,18 @@ Only supply shocks (A\_t, θ\_t) move output, employment and the wage; demand sh
 
 Rule: the curve that shifts pushes along the curve that does not; the flatter the stationary curve, the more the quantity moves and the less the price moves. A larger MPC flattens IS but also widens its horizontal shift by the same factor 1/(1 − MPC); with a vertical Ys these offset, so in the linear case ↑ f\_t lowers r\_t by the same amount, −I\_fΔf/(C\_r + I\_r), whatever the MPC (Ch 18 Ex 6).
 
-### Takeaways (Ch 18 summary and Lecture 5)
+#### Takeaways (Ch 18 summary and Lecture 5)
 
 - Supply-driven theory of fluctuations; demand shocks change composition, not level.
 - Positive supply shocks lower P; positive demand shocks raise P (demand-side: ↑ A\_{t+1}, ↑ G\_t, ↓ f\_t, ↓ G\_{t+1}).
 - Monetary neutrality: nominal shocks do not move real variables. Classical dichotomy: real variables are solvable without nominal ones; the converse fails (real shocks move P and i).
 - Changes in K\_t are not analyzed: they shift both curves and can only be exogenous decreases (wars, natural disasters).
 
-## Also in the Ch 17–18 file: Ch 14.2, 15 and 16
+### Also in the Ch 17–18 file: Ch 14.2, 15 and 16
 
-Your "17 and 18" PDF opens with the end of Ch 14 and all of Ch 15–16. They are not tied to a lecture deck, so treat them as lower priority, but Ch 14.2 underlies the money market in Unit 9.
+Your "17 and 18" PDF opens with the end of Ch 14 and all of Ch 15–16. They are not tied to a lecture deck, so treat them as lower priority, but Ch 14.2 underlies the money market in the neoclassical model above.
 
-### Ch 14.2 Money in the production economy
+#### Ch 14.2 Money in the production economy
 
 - Money's roles: medium of exchange (solves the double-coincidence-of-wants problem; the most important role, but hard to model with one good and one agent), unit of account, store of value. Commodity vs fiat money.
 - Modeling shortcut: the household gets utility from real balances M\_t/P\_t and can save in bonds (earn i\_t) or money (earn 0).
@@ -738,13 +758,13 @@ Your "17 and 18" PDF opens with the end of Ch 14 and all of Ch 15–16. They are
 
 where i\_t = nominal interest rate; π^e\_{t+1} = expected inflation from t to t+1; M^d = real money demand, falling in i\_t (opportunity cost) and rising in Y\_t (more transactions). The government sells money in t and buys it back in t+1; the firm's problem is unchanged.
 
-### Ch 15 Equilibrium efficiency
+#### Ch 15 Equilibrium efficiency
 
 - A benevolent social planner choosing C\_t, C\_{t+1}, N\_t, N\_{t+1}, K\_{t+1} to maximize the household's utility subject only to resource constraints (C\_t + K\_{t+1} − (1−δ)K\_t + G\_t ≤ A\_tF(K\_t, N\_t)) gets first-order conditions identical to the market equilibrium once prices are substituted out: the competitive equilibrium is Pareto efficient (a formal version of Smith's invisible hand; the First Welfare Theorem).
 - If the planner also picks M\_t: it sets the marginal utility of real balances to zero, because money is costless to create. The market matches this only if i\_t = 0 (the Friedman rule).
 - If the planner picks G\_t: with useless G, G = 0; with utility from G, it sets the marginal utility of G equal to the marginal utility of private consumption.
 
-### Ch 16 Search, matching and unemployment
+#### Ch 16 Search, matching and unemployment
 
 - Motivation: the representative-agent labor market has no unemployment, yet most variation in hours is on the extensive margin (people moving in and out of work). Beveridge curve: vacancies and unemployment move inversely.
 
@@ -756,7 +776,7 @@ where u\_t = unemployment rate; f = job-finding rate; s = separation rate; u\* =
 
 - Diamond–Mortensen–Pissarides: a constant-returns matching function turns unemployed U and vacancies V into matches; labor-market tightness V/U raises the job-finding rate and lowers the vacancy-filling rate. Wages split the match surplus by bargaining power; free entry of firms drives the value of a vacancy to zero. Congestion externalities mean the equilibrium need not be efficient. Comparative statics: higher vacancy-posting cost, lower matching efficiency, lower productivity or higher separations all raise unemployment.
 
-## Diagram: an increase in A\_t in the neoclassical model
+### Diagram: an increase in A\_t in the neoclassical model
 
 <div class="sim-callout">This diagram is interactive in the app: open the <a href="#/simulator?shock=At">Shock simulator</a> to watch each panel shift, then try the other seven shocks.</div>
 

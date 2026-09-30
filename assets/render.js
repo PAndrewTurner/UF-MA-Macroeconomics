@@ -125,17 +125,15 @@
       div.innerHTML = renderLatex(latexBlocks[Number(div.dataset.math)]);
     });
     const used = {};
-    el.querySelectorAll('h1, h2, h3').forEach(h => {
+    el.querySelectorAll('h1, h2, h3, h4').forEach(h => {
       let id = Render.slugify(h.textContent) || 'section';
       if (used[id]) id += '-' + (++used[id]); else used[id] = 1;
       h.id = id;
     });
-    // "Unit 3 — The Solow growth model (Ch 5, Lecture 4)" -> eyebrow, title, sources.
-    el.querySelectorAll('h2').forEach(h => {
-      const parts = Render.splitUnit(h.textContent);
-      if (!parts) return;
+    // "Module 2 — Consumption and saving (L02)" -> eyebrow, title, lecture;
+    // "Two-period consumption-saving (Ch 9, Lecture 2)" -> title, sources.
+    const setParts = (h, parts) => {
       h.textContent = '';
-      h.classList.add('unit-head');
       [['h-eyebrow', parts.unit], ['h-title', parts.title], ['h-src', parts.src]].forEach(([cls, txt]) => {
         if (!txt) return;
         const s = document.createElement('span');
@@ -143,6 +141,37 @@
         s.textContent = txt;
         h.appendChild(s);
       });
+    };
+    el.querySelectorAll('h2').forEach(h => {
+      const parts = Render.splitModule(h.textContent);
+      if (!parts) return;
+      h.classList.add('module-head');
+      setParts(h, parts);
+      const meta = h.nextElementSibling;
+      if (meta && meta.tagName === 'P' && /^Lecture:/.test(meta.textContent)) {
+        // "**Lecture:** L02 · **Textbook:** Ch 9–10" -> one label/value pair per item
+        meta.classList.add('module-meta');
+        const pairs = [...meta.querySelectorAll('strong')].map(s => {
+          let text = '';
+          for (let n = s.nextSibling; n && n.nodeName !== 'STRONG'; n = n.nextSibling) text += n.textContent;
+          return [s.textContent.replace(/:$/, ''), text.replace(/^[\s·]+|[\s·]+$/g, '')];
+        });
+        meta.textContent = '';
+        pairs.forEach(([label, value]) => {
+          const item = document.createElement('span');
+          item.className = 'mm';
+          item.innerHTML = '<strong></strong><span></span>';
+          item.firstChild.textContent = label;
+          item.lastChild.textContent = value;
+          meta.appendChild(item);
+        });
+      }
+    });
+    el.querySelectorAll('h2.module-head ~ h3').forEach(h => {
+      const m = h.textContent.match(/^(.+?)\s+\((Ch [^()]+)\)$/);
+      if (!m) return;
+      h.classList.add('topic-head');
+      setParts(h, { title: m[1], src: m[2] });
     });
     // The "where …" line that defines each symbol of the formula above it.
     el.querySelectorAll('.math-block + p').forEach(p => {
@@ -152,19 +181,24 @@
     return el;
   };
 
-  Render.splitUnit = function (text) {
-    const m = String(text).match(/^(Unit \d+)\s+[—–-]\s+(.+?)(?:\s+\(([^()]+)\))?$/);
-    return m ? { unit: m[1], title: m[2], src: m[3] || '' } : null;
+  Render.splitModule = function (text) {
+    const m = String(text).match(/^(Module (\d+))\s+[—–-]\s+(.+?)(?:\s+\(([^()]+)\))?$/);
+    return m ? { unit: m[1], n: m[2], title: m[3], src: m[4] || '' } : null;
   };
 
-  // Headings (level 2) for the sidebar table of contents, straight from markdown.
-  Render.outline = function (md, level) {
-    const re = new RegExp('^' + '#'.repeat(level) + ' (.+)$', 'gm');
+  // Headings for the sidebar table of contents, straight from markdown.
+  // `levels` is a number or an array (e.g. [2, 3]); ids match Render.markdown.
+  Render.outline = function (md, levels) {
+    const want = [].concat(levels);
+    const re = /^(#{1,4}) (.+)$/gm;
     const out = [];
+    const used = {};
     let m;
     while ((m = re.exec(md))) {
-      const title = m[1].replace(/\\(.)/g, '$1');
-      out.push({ title, id: Render.slugify(title) });
+      const title = m[2].replace(/\\(.)/g, '$1');
+      let id = Render.slugify(title) || 'section';
+      if (used[id]) id += '-' + (++used[id]); else used[id] = 1;
+      if (want.includes(m[1].length)) out.push({ title, id, level: m[1].length });
     }
     return out;
   };

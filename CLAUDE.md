@@ -26,7 +26,7 @@ python3 tests/smoke_test.py      # headless check of every view (needs playwrigh
 | `assets/flashcards.js` + `data/flashcards.js` | Flashcard UI and hand-written deck. Shock cards are generated from `data/shocks.js`. Progress lives in localStorage. |
 | `assets/simulator.js` + `data/shocks.js` | Neoclassical-model shock simulator (labor market, production function, IS–Ys, money market). |
 | `Class Material/` | The original course files (textbook chapters, lecture decks, problem sets). Source material for the content; git-ignored. |
-| `assets/home.js` | Overview page (`#/home`, the default route): the "Which curve moves?" IS–Ys drill, links, flashcard progress, course path. |
+| `assets/home.js` | Overview page (`#/home`, the default route): the "Which curve moves?" IS–Ys drill, links, flashcard progress, course path by module. |
 | `assets/app.js` | Hash router (`#/home`, `#/guide?s=<heading-slug>`, `#/simulator?shock=Gt`), sidebar TOC, search box, theme, hide-answer mode for practice questions. |
 | `assets/styles.css` | Design tokens at the top (paper, ink, blue-book accent, highlighter yellow; dark theme under `[data-theme="dark"]`). Fonts: Bricolage Grotesque (display), Atkinson Hyperlegible Next (body), Spline Sans Mono (labels) from Google Fonts. |
 
@@ -34,6 +34,7 @@ No build tooling or npm: plain HTML/CSS/JS, libraries from jsDelivr (marked 12, 
 
 ## Content conventions (keep these)
 
+- The study guide is organized by course module, one per lecture deck: `## Module N — Title (L0N)`, then a `**Lecture:** … · **Textbook:** … · **Problem set:** …` line, then `### Topic (Ch …)` headings with `####` subsections. render.js, search.js, the sidebar TOC and the Overview course path all rely on that heading pattern.
 - Every displayed formula is followed by a "where …" line defining each symbol.
 - Math shorthand in prose uses `-->` for "implies/leads to" and `∴` for conclusions, not arrow glyphs like → or ⟹.
 - Display formulas go in ```latex fences (bare TeX, no `$`). Inline math stays plain text (`Y_t`, `β(1+r_t)`), which render.js prettifies.

@@ -30,39 +30,55 @@
     return { view: path || 'home', query };
   }
 
-  function buildToc(docId, level) {
+  function buildToc(docId, levels) {
     const doc = DOCS.find(d => d.id === docId);
     const box = document.getElementById('toc-' + docId);
     if (!box || !doc) return;
-    const items = window.Render.outline(doc.md, level);
-    box.innerHTML = items.map(o => `<a href="#/${docId}?s=${o.id}" data-sec="${o.id}"></a>`).join('');
+    const items = window.Render.outline(doc.md, levels);
+    const top = Math.min(...items.map(o => o.level));
+    box.innerHTML = items.map(o => `<a href="#/${docId}?s=${o.id}" data-sec="${o.id}" class="${o.level > top ? 'toc-sub' : 'toc-top'}"></a>`).join('');
     box.querySelectorAll('a').forEach((a, k) => {
-      const unit = window.Render.splitUnit(items[k].title);
-      if (unit) {
-        a.innerHTML = `<span class="toc-n">${unit.unit.replace('Unit ', '')}</span><span class="toc-t"></span>`;
-        a.querySelector('.toc-t').textContent = unit.title;
+      const mod = window.Render.splitModule(items[k].title);
+      const sub = items[k].level > top && items[k].title.match(/^(.+?)\s+\(Ch [^()]+\)$/);
+      if (mod) {
+        a.classList.add('toc-mod');
+        a.innerHTML = `<span class="toc-n">${mod.n}</span><span class="toc-t"></span>`;
+        a.querySelector('.toc-t').textContent = mod.title;
       } else {
         a.innerHTML = '<span class="toc-t"></span>';
-        a.querySelector('.toc-t').textContent = items[k].title;
+        a.querySelector('.toc-t').textContent = sub ? sub[1] : items[k].title;
       }
       window.Render.prettifyScripts(a);
+    });
+  }
+
+  // Highlight the section being read; a topic also lights up its module.
+  function markCurrent(view, sec) {
+    const links = [...document.querySelectorAll('#toc-' + view + ' a')];
+    const hit = links.find(a => a.dataset.sec === sec);
+    if (sec && !hit) return;
+    let mod = null;
+    if (hit) for (let k = links.indexOf(hit); k >= 0; k--) { if (links[k].classList.contains('toc-top')) { mod = links[k]; break; } }
+    links.forEach(a => {
+      a.classList.toggle('current', a === hit);
+      a.classList.toggle('in-current', a === mod && a !== hit);
     });
   }
 
   function setActive(view, sec) {
     document.querySelectorAll('.sidebar a[data-view]').forEach(a => a.classList.toggle('active', a.dataset.view === view));
     document.querySelectorAll('.toc').forEach(t => { t.style.display = t.id === 'toc-' + view ? '' : 'none'; });
-    document.querySelectorAll('.toc a').forEach(a => a.classList.toggle('current', a.dataset.sec === sec));
+    markCurrent(view, sec);
   }
 
   let spy = null;
   function scrollSpy(view) {
     if (spy) spy.disconnect();
-    const heads = main.querySelectorAll('.doc h2');
+    const heads = main.querySelectorAll('.doc h2, .doc h3');
     if (!heads.length || !('IntersectionObserver' in window)) return;
     spy = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) document.querySelectorAll('#toc-' + view + ' a').forEach(a => a.classList.toggle('current', a.dataset.sec === e.target.id));
+        if (e.isIntersecting) markCurrent(view, e.target.id);
       });
     }, { rootMargin: '-60px 0px -75% 0px' });
     heads.forEach(h => spy.observe(h));
@@ -239,7 +255,7 @@
       return;
     }
     window.Search.build(DOCS);
-    buildToc('guide', 2);
+    buildToc('guide', [2, 3]);
     buildToc('problems', 2);
     const practice = DOCS.find(d => d.id === 'practice').md;
     document.getElementById('countPractice').textContent = (practice.match(/^\*\*\d+\./gm) || []).length;
